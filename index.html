@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To My Love 💌</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>To My Dearest ❤️</h1>
+    <p class="letter">
+      Every moment with you feels like magic. <br>
+      Every time I think of you, my heart races. <br>
+      You make my days brighter, my heart fuller, and my life better. <br>
+      Your smile lights up even the darkest days, and your touch brings me peace. <br>
+      Being with you feels like home, a place where I belong. <br>
+      This letter may be virtual, but my love for you is more real than anything. 💖<br>
+      Yours forever,<br>
+      *BACKFLIP*
+    </p>
+    <button onclick="startLove()">Click to Begin 💘</button>
+  </div>
+
+  <audio id="bg-music" src="No One Noticed.mp3"></audio>
+
+  <div id="animations" class="hidden">
+    
+    <img class="float heart" src="heart.png" /> 
+    <img class="float heart" src="cat1.png" />
+    <img class="float heart" src="cat2.png" />
+    <img class="float heart" src="cat3.png" />
+    <img class="float heart" src="kitty.png" />
+    
+
+
+    
+  
+  </div>
+
+  <script>
+    function startLove() {
+        const music = document.getElementById("bg-music");
+        const anim = document.getElementById("animations");
+        music.play();
+        anim.classList.remove("hidden");
+        document.body.classList.add("love-mode");
+      
+        
+      
+        
+        for (let i = 0; i < 25; i++) {
+          const img = document.createElement("img");
+          img.src = images[Math.floor(Math.random() * images.length)];
+          img.classList.add("float");
+      
+          
+          img.style.left = `${Math.random() * 100}%`;
+      
+          // Random vertical speed (duration) between 6s and 12s
+          const randomDuration = 6 + Math.random() * 6;
+          
+          // Random vertical distance (movement) between 200px and 500px
+          const randomDistance = 200 + Math.random() * 300;
+      
+          // Apply random delays and durations for animation
+          img.style.setProperty('--delay', `${Math.random() * 5}s`);
+          img.style.setProperty('--duration', `${randomDuration}s`);
+          img.style.setProperty('--distance', `${randomDistance}px`);
+      
+          anim.appendChild(img);
+        }
+      
+        // Sparkles
+        for (let i = 0; i < 50; i++) {
+          const sparkle = document.createElement("div");
+          sparkle.classList.add("sparkle");
+          sparkle.style.top = `${Math.random() * 100}%`;
+          sparkle.style.left = `${Math.random() * 100}%`;
+          sparkle.style.animationDelay = `${Math.random() * 5}s`;
+          sparkle.style.animationDuration = `${2 + Math.random() * 3}s`;
+          document.body.appendChild(sparkle);
+        }
+      }
+      
+  </script>
+  
+  
+</body>
+</html>

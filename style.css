@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .container {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  h1, .letter {
+    font-family: 'Dancing Script', cursive; /* Apply the romantic font */
+    font-size: 3rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.letter {
+    font-size: 1.3rem;
+    line-height: 2;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+  
+  button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    background: #fff;
+    color: #e91e63;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 10;
+
+  }
+  
+  
+  button:hover {
+    background: #f8bbd0;
+    color: white;
+  }
+  
+  /* Floating hearts animation */
+  
+  .hearts {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .heart {
+    position: absolute;
+    bottom: -50px;
+    width: 30px;
+    height: 30px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Red_Heart.svg/1200px-Red_Heart.svg.png') no-repeat center;
+    background-size: contain;
+    animation: floatHearts 10s infinite ease-in-out;
+    opacity: 0.7;
+  }
+  
+  .heart:nth-child(1) { left: 20%; animation-delay: 0s; }
+  .heart:nth-child(2) { left: 40%; animation-delay: 3s; }
+  .heart:nth-child(3) { left: 60%; animation-delay: 5s; }
+  .heart:nth-child(4) { left: 80%; animation-delay: 7s; }
+  
+ .float {
+  position: absolute;
+  bottom: -50px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+  animation-name: floatItems;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: calc(var(--delay, 0) * 1s);
+  animation-duration: calc(var(--duration, 10) * 1s);
+}
+
+  
+  @keyframes floatItems {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(calc(-1 * var(--distance, 300px))) scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(calc(-2 * var(--distance, 300px))) scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  .hidden {
+    display: none;
+  }
+  body.love-mode {
+    animation: bgPulse 10s infinite alternate;
+    background: linear-gradient(45deg, #ffdde1, #ee9ca7, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+  }
+  
+  @keyframes bgPulse {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: sparkleAnim 2s infinite ease-in-out;
+  }
+  
+  @keyframes sparkleAnim {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0.6;
+    }
+  }
+    
